@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light only" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css2?display=swap&family=Bebas+Neue:ital,wght@0,400;1,400&family=Belleza:ital,wght@0,400;1,400"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap"
       rel="stylesheet"
       type="text/css"
     />
@@ -19,31 +19,50 @@
         position: relative;
         z-index: 1;
         width: 100%;
+        max-width: 420px;
         height: 2rem;
-        background: black;
-        color: white;
-        border: 0px solid #444;
-        font-family: inherit;
-        font-family: "Bebas Neue", sans-serif;
-        letter-spacing: 0.325rem;
-        padding-left: calc(0.325rem + 1rem);
-        font-size: 1em;
+        background: transparent;
+        color: #888888;
+        border: 0;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 0.25rem;
+        padding: 0;
+        font-size: 0.8em;
         font-weight: 400;
+        text-align: center;
+        text-align-last: center;
         direction: var(--site-language-direction);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        transition:
-          color 0.25s ease,
-          background-color 0.25s ease,
-          border-color 0.25s ease;
+        overflow: visible;
+        appearance: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
       }
 
       .system-select:hover {
         cursor: pointer;
+        color: #e2e2e2;
       }
       .system-select:focus {
         border: 0;
         outline: 0;
+      }
+
+      #buttons02 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+      }
+
+      #buttons02 li {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
       }
 
       .text-component.instance-4 {
@@ -54,7 +73,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 2em;
@@ -82,7 +101,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 2em;
@@ -110,7 +129,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.25rem;
         width: calc(100% + 0.25rem);
         font-size: 2em;
@@ -138,7 +157,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.25rem;
         width: calc(100% + 0.25rem);
         font-size: 1em;
@@ -166,7 +185,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #e6f29b;
-        font-family: "Belleza", sans-serif;
+        font-family: "EB Garamond", sans-serif;
         letter-spacing: 0.25rem;
         width: calc(100% + 0.25rem);
         font-size: 1em;
@@ -208,7 +227,7 @@
         gap: 0.5rem;
         flex-direction: row;
         flex-wrap: wrap;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         margin-right: -0.325rem;
         font-size: 2em;
@@ -260,7 +279,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -294,7 +313,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -494,24 +513,25 @@
     <div id="site-wrapper" class="site-wrapper hidden">
       <div class="site-main">
         <div class="inner">
-          <h1 id="text04" class="text-component instance-4">
+          <div class="nuvo-header" style="margin-bottom: 2rem;">N U V O</div>
+          <h1 id="text04" class="text-component instance-4" style="margin-bottom: 0.5rem; max-width: 450px;">
             THIS IS A LIMITED PREVIEW. ENTRY IS SELECTIVE AND INTENTIONALLY CONSTRAINED.
           </h1>
-          <h1 id="text04" class="text-component instance-4">
+          <h1 id="text04" class="text-component instance-4" style="margin-bottom: 0.5rem; max-width: 450px;">
             THE QUESTIONS BELOW OFFER A PARTIAL VIEW INTO NUVO. YOU MAY REVIEW 7 PER SESSION.
           </h1>
-          <h1 id="text04" class="text-component instance-4">
+          <h1 id="text04" class="text-component instance-4" style="max-width: 450px;">
             WHEN YOU ARE READY TO ATTEMPT ENTRY, USE THE LINK AT THE BOTTOM OF THE PAGE.
           </h1>
-          <h1 id="text03" class="text-component instance-3">Question</h1>
+          <h1 id="text03" class="text-component instance-3" style="margin-top: 4rem !important;">Question</h1>
           <ul id="buttons02" class="buttons-component instance-2">
             <li class="system-select-container">
               <select id="questionSelect" class="system-select" role="button">
-                <option value="">SELECT A QUESTION</option>
+                <option value="" style="background-color: #0a0a0b; color: #e2e2e2; text-align: center;">SELECT A QUESTION</option>
               </select>
             </li>
           </ul>
-          <h1 id="text05" class="text-component instance-5">RESPONSE</h1>
+          <h1 id="text05" class="text-component instance-5" style="margin-top: 4rem !important;">RESPONSE</h1>
           <ul id="buttons03" class="buttons-component instance-3">
             <li>
               <a
@@ -519,14 +539,16 @@
                 href="#"
                 class="n01 response-box"
                 role="button"
+                style="text-align: center !important;"
                 >-</a
               >
             </li>
           </ul>
 
-          <ul id="links01" class="links-component instance-1">
-            <li class="n01">
-              <a id="identity-generator-link" href="#">IDENTITY GENERATOR</a>
+          <hr class="divider" style="max-width:300px; margin: 4rem auto 2rem auto; background: #222;" />
+          <ul class="buttons-component instance-2">
+            <li>
+              <a id="identity-generator-link" href="#" class="n01" role="button" style="color:#ffffff !important;">IDENTITY GENERATOR</a>
             </li>
           </ul>
         </div>
@@ -534,14 +556,14 @@
     </div>
 
     <script type="module">
-      import { initializeStateMachine } from "./js/init.js";
+      import { initializeStateMachine } from "./js/init.mock.js";
       import {
         State,
         ROUTE_STATE_MAP,
         QA_SET,
         METRICS_MAP,
       } from "./js/constants.js";
-      import { logMetric } from "./js/services/metrics.js";
+      import { logMetric } from "./js/services/metrics.mock.js";
       import { msToTime } from "./js/utils.js";
 
       const stateMachine = await initializeStateMachine();
@@ -566,6 +588,9 @@
         const option = document.createElement("option");
         option.value = index;
         option.textContent = item[0];
+        option.style.backgroundColor = "#0a0a0b";
+        option.style.color = "#e2e2e2";
+        option.style.textAlign = "center";
         select.appendChild(option);
       });
 

@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light only" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css2?display=swap&family=Bebas+Neue:ital,wght@0,400;1,400&family=Belleza:ital,wght@0,400;1,400"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap"
       rel="stylesheet"
       type="text/css"
     />
@@ -22,7 +22,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 3em;
@@ -50,7 +50,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 2em;
@@ -78,7 +78,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 2em;
@@ -106,7 +106,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #e7f086;
-        font-family: "Belleza", sans-serif;
+        font-family: "EB Garamond", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 1em;
@@ -162,7 +162,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -196,7 +196,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -361,23 +361,23 @@
     <div id="site-wrapper" class="site-wrapper hidden">
       <div class="site-main">
         <div class="inner">
-          <h1 id="text05" class="text-component instance-5">WELCOME VISITOR</h1>
-          <h1 id="text02" class="text-component instance-2">
-            A TOKEN PHRASE HAS BEEN ISSUED TO YOU. THIS DOES NOT GRANT ACCESS,
-            IT GRANTS A CHANCE.
+          <div class="nuvo-header">N U V O</div>
+          <h1 id="text05" class="text-component instance-5">Welcome visitor</h1>
+          <h1 id="text02" class="text-component instance-2" style="max-width:350px;">
+            A TOKEN PHRASE HAS BEEN ISSUED TO YOU.<br/><br/>THIS DOES NOT GRANT ACCESS. IT GRANTS A CHANCE.
           </h1>
-          <ul id="buttons01" class="buttons-component instance-1">
+          <ul id="buttons01" class="buttons-component instance-1" style="margin: 2rem 0 !important;">
             <li>
-              <a id="phrase" href="#" class="n01" role="button"></a>
+              <a id="phrase" href="#" class="n01" role="button" style="color: #fff !important; font-family: 'EB Garamond', serif !important; font-size: 1.5em !important; text-transform:none !important;"></a>
             </li>
           </ul>
-          <h1 id="text04" class="text-component instance-4">
-            THE PHRASE IS UNIQUE TO THIS SESSION AND WILL BE NEEDED FOR ACCESS
-            TO THE ID GENERATOR.
+          <h1 id="text04" class="text-component instance-1" style="max-width:350px;">
+            THE PHRASE IS UNIQUE TO THIS SESSION AND WILL BE NEEDED FOR ACCESS TO THE ID GENERATOR.
           </h1>
+          <hr class="divider" style="max-width:300px; margin: 1.5rem auto 3rem auto; background: #222;" />
           <ul class="buttons-component instance-2">
             <li>
-              <a id="buttons02" href="#" class="n01" role="button">ENTER</a>
+              <a id="buttons02" href="#" class="n01" role="button" style="color:#fff !important;">PROCEED</a>
             </li>
           </ul>
         </div>
@@ -385,13 +385,13 @@
     </div>
 
     <script type="module">
-      import { initializeStateMachine } from "./js/init.js";
+      import { initializeStateMachine } from "./js/init.mock.js";
       import { State, METRICS_MAP } from "./js/constants.js";
-      import { logMetric } from "./js/services/metrics.js";
+      import { logMetric } from "./js/services/metrics.mock.js";
       import {
         getVisitorSession,
         createVisitorSession,
-      } from "/js/services/visitor-session.js";
+      } from "/js/services/visitor-session.mock.js";
 
       const stateMachine = await initializeStateMachine();
 

@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light only" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css2?display=swap&family=Bebas+Neue:ital,wght@0,400;1,400&family=Belleza:ital,wght@0,400;1,400"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap"
       rel="stylesheet"
       type="text/css"
     />
@@ -22,7 +22,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 2em;
@@ -58,7 +58,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 1em;
@@ -86,7 +86,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #f5f2ab;
-        font-family: "Belleza", sans-serif;
+        font-family: "EB Garamond", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 1em;
@@ -142,7 +142,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -172,7 +172,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -202,7 +202,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -387,39 +387,39 @@
     <div id="site-wrapper" class="site-wrapper hidden">
       <div class="site-main">
         <div class="inner">
-          <h1 id="text03" class="text-component instance-3">
+          <div class="nuvo-header">N U V O</div>
+
+          <h1 class="text-component instance-3" style="font-size: 1.8em !important; margin-bottom: 1.5rem !important;">
             <span class="p">not applicable.</span>
-            <span class="p"
-              >this token phrase did not resolve to an identity. this session remains active. <br/>YOU MAY WAIT
-              FOR THE COOL DOWN AND TRY AGAIN OR PROCEED TO THE TRANSFER
-              PORTAL.</span
-            >
           </h1>
-          <ul id="buttons01" class="buttons-component instance-1">
+
+          <h1 class="text-component instance-2" style="max-width: 400px; line-height: 2 !important;">
+            <span class="p">This token phrase did not resolve to an identity.</span>
+            <span class="p">This session remains active.</span>
+            <span class="p">You may wait for the cooldown and try again, or proceed to the Transfer Portal.</span>
+          </h1>
+
+          <hr class="divider" style="max-width:300px; margin: 3rem auto; background: #222;" />
+
+          <ul id="buttons01" class="buttons-component instance-1" style="margin-bottom: 1rem !important;">
             <li>
-              <a id="return-button" href="#" class="n01" role="button"
-                >RETURN TO PHRASE GENERATOR</a
-              >
+              <a id="return-button" href="#" class="n01" role="button" style="color:#ffffff !important;">RETURN TO PHRASE GENERATOR</a>
             </li>
           </ul>
-          <!-- <h1 id="text02" class="text-component instance-2">
-            alternative access is AVAILABLE.
-          </h1> -->
+
           <ul id="buttons03" class="buttons-component instance-3">
             <li>
-              <a id="enter-to-portal" href="#" class="n01" role="button"
-                >enter TRANSFER PORTAL</a
-              >
+              <a id="enter-to-portal" href="#" class="n01" role="button" style="color:#aaaaaa !important;">ENTER TRANSFER PORTAL</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
     <script type="module">
-      import { initializeStateMachine } from "./js/init.js";
+      import { initializeStateMachine } from "./js/init.mock.js";
       import { State, METRICS_MAP } from "./js/constants.js";
-      import { logMetric } from "./js/services/metrics.js";
-      import { decreaseAvailablePortals } from "./js/services/fetch-constants.js";
+      import { logMetric } from "./js/services/metrics.mock.js";
+      import { decreaseAvailablePortals } from "./js/services/fetch-constants.mock.js";
 
       const stateMachine = await initializeStateMachine();
 

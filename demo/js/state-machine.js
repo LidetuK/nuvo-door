@@ -337,7 +337,7 @@ export class stateMachineClass {
   validateCurrentRoute() {
     if (this.visitorSession[VISITOR_FIELDS_MAP.DEMO_COMPLETED] === true) {
       
-      if (window.location.pathname === ROUTE_STATE_MAP[State.DEMO_COMPLETED]){
+      if (this.normalizePath(window.location.pathname) === this.normalizePath(ROUTE_STATE_MAP[State.DEMO_COMPLETED])){
         this.showContent();
         return
       }
@@ -351,7 +351,7 @@ export class stateMachineClass {
 
     if (
       this.attempts > this.config[CONSTANTS_MAP.MAX_ATTEMPTS] &&
-      window.location.pathname !== ROUTE_STATE_MAP[State.FEEDBACK]
+      this.normalizePath(window.location.pathname) !== this.normalizePath(ROUTE_STATE_MAP[State.FEEDBACK])
     ) {
       this.currentState = State.FEEDBACK;
       this.persistInStorage();
@@ -362,12 +362,18 @@ export class stateMachineClass {
 
     const expectedRoute = ROUTE_STATE_MAP[this.currentState];
 
-    if (window.location.pathname !== expectedRoute) {
+    // Normalize both paths (strip .html) so /page1 and /page1.html are treated equally
+    if (this.normalizePath(window.location.pathname) !== this.normalizePath(expectedRoute)) {
       window.location.replace(expectedRoute);
 	  return
     }
 
     this.showContent()
+  }
+
+  // Strip .html suffix for flexible route comparison
+  normalizePath(path) {
+    return path.replace(/\.html$/, '');
   }
 
   showContent() {

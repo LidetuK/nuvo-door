@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light only" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css2?display=swap&family=Bebas+Neue:ital,wght@0,400;1,400&family=Belleza:ital,wght@0,400;1,400"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap"
       rel="stylesheet"
       type="text/css"
     />
@@ -22,7 +22,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 3em;
@@ -50,7 +50,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 2em;
@@ -62,7 +62,7 @@
         text-decoration: underline;
       }
 
-      .text-component.instance-2 a: {
+      .text-component.instance-2 a:hover {
         text-decoration: none;
       }
 
@@ -78,7 +78,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #e1f5a9;
-        font-family: "Belleza", sans-serif;
+        font-family: "EB Garamond", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 1em;
@@ -134,7 +134,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -168,7 +168,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -198,7 +198,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -375,29 +375,38 @@
     <div id="site-wrapper" class="site-wrapper hidden">
       <div class="site-main">
         <div class="inner">
-          <h1 id="text03" class="text-component instance-3">
-            identity generator
+          <div class="nuvo-header">N U V O</div>
+          <h1 id="text03" class="text-component instance-3" style="margin-bottom: 1rem !important;">
+            Identity Generator
           </h1>
-          <h1 id="text02" class="text-component instance-2">
+          <h1 class="text-component instance-2" style="max-width: 380px; margin: 0 auto 3rem auto !important;">
             ENTER your SESSION token PHRASE BELOW.
           </h1>
-          <ul id="buttons01" class="buttons-component instance-1">
-            <li>
-              <a id="phrase" href="#" class="n01" role="button"></a>
-            </li>
-          </ul>
+
+          <!-- Token phrase displayed here — populated by JS -->
+          <div style="text-align: center; margin: 0 auto 2rem auto;">
+            <span id="phrase" style="
+              font-family: 'EB Garamond', serif;
+              font-size: 2em;
+              color: #f7f7f7;
+              letter-spacing: 0.15em;
+            "></span>
+          </div>
+
+          <hr class="divider" style="max-width:300px; margin: 0 auto 3rem auto; background: #222;" />
+
           <ul id="buttons03" class="buttons-component instance-3">
             <li>
-              <a id="submit" href="#" class="n01" role="button">SUBMIT</a>
+              <a id="submit" href="#" class="n01" role="button" style="color:#ffffff !important;">REQUEST ENTRY</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
     <script type="module">
-      import { initializeStateMachine } from "./js/init.js";
+      import { initializeStateMachine } from "./js/init.mock.js";
       import { State, METRICS_MAP } from "./js/constants.js";
-      import { logMetric } from "./js/services/metrics.js";
+      import { logMetric } from "./js/services/metrics.mock.js";
 
       const stateMachine = await initializeStateMachine();
 

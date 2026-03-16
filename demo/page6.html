@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light only" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css2?display=swap&family=Bebas+Neue:ital,wght@0,400;1,400&family=Belleza:ital,wght@0,400;1,400"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap"
       rel="stylesheet"
       type="text/css"
     />
@@ -22,7 +22,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 3em;
@@ -50,7 +50,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #030303;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 2em;
@@ -78,7 +78,7 @@
         --margin-left: 0;
         --margin-right: auto;
         color: #f6f7b2;
-        font-family: "Belleza", sans-serif;
+        font-family: "EB Garamond", sans-serif;
         letter-spacing: 0.325rem;
         width: calc(100% + 0.325rem);
         font-size: 1em;
@@ -208,7 +208,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -238,7 +238,7 @@
         line-height: 2rem;
         padding: 0 1rem;
         vertical-align: middle;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         letter-spacing: 0.325rem;
         padding-left: calc(0.325rem + 1rem);
         font-size: 1em;
@@ -409,46 +409,370 @@
           gap: 0.5625rem;
         }
       }
+
+      /* =============================================
+         NUVO Identity Card Component
+         ============================================= */
+      .nuvo-id-card {
+        width: 100%;
+        max-width: 540px;
+        /* Layered dark textured background */
+        background-color: #1c1c1e;
+        background-image:
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E"),
+          radial-gradient(ellipse at 25% 35%, rgba(70,68,68,0.45) 0%, transparent 65%),
+          radial-gradient(ellipse at 80% 80%, rgba(40,38,38,0.3) 0%, transparent 60%);
+        border-radius: 14px;
+        /* Double-border effect: outer silver, inner subtle */
+        border: 2px solid rgba(160,155,150,0.55);
+        outline: 1px solid rgba(255,255,255,0.06);
+        outline-offset: -5px;
+        padding: 22px 24px 20px 24px;
+        box-shadow:
+          0 12px 50px rgba(0,0,0,0.85),
+          0 2px 8px rgba(0,0,0,0.6),
+          inset 0 1px 0 rgba(255,255,255,0.08);
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      /* Inner silver inset border line */
+      .nuvo-id-card::after {
+        content: '';
+        position: absolute;
+        inset: 5px;
+        border-radius: 10px;
+        border: 1px solid rgba(160,155,150,0.18);
+        pointer-events: none;
+      }
+
+      .nuvo-id-inner {
+        display: flex;
+        gap: 18px;
+        align-items: flex-end;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      .nuvo-id-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nuvo-id-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+
+      .nuvo-id-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2em;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        color: #dcdcdc;
+        margin-bottom: 0px;
+        line-height: 1;
+      }
+
+      .nuvo-id-subtitle {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.58em;
+        letter-spacing: 0.28em;
+        color: #888;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        margin-top: 4px;
+      }
+
+      .nuvo-id-hr {
+        border: 0;
+        border-top: 1px solid rgba(255,255,255,0.18);
+        margin: 10px 0 13px 0;
+      }
+
+      .nuvo-id-field {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.6em;
+        letter-spacing: 0.14em;
+        color: #999;
+        text-transform: uppercase;
+        margin-bottom: 9px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        padding-bottom: 8px;
+      }
+
+      .nuvo-id-field:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .nuvo-id-arrow {
+        color: #aaa;
+        font-size: 0.75em;
+      }
+
+      .nuvo-id-value {
+        color: #e4e4e4;
+        font-weight: 600;
+      }
+
+      /* QR code wrapper — white background, border, generous padding */
+      .nuvo-id-qr {
+        background: #ffffff;
+        display: inline-block;
+        padding: 8px;
+        border-radius: 2px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      }
+
+      .nuvo-id-scannable {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.52em;
+        letter-spacing: 0.28em;
+        color: #888;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 4px;
+      }
     </style>
   </head>
-  <body>
     <div id="site-wrapper" class="site-wrapper hidden">
       <div class="site-main">
         <div class="inner">
-          <h1 id="text05" class="text-component instance-5">
-            IDENTITY TRANSFER PORTAL
+          <div class="nuvo-header">N U V O</div>
+
+          <h1 id="text05" class="text-component instance-5" style="font-size: 1.8em !important; margin-bottom: 1rem !important;">
+            Identity Transfer Portal
           </h1>
-          <h1 id="text02" class="text-component instance-2">
-            THE FOLLOWING IDENTITIES WERE RELINQUISHED BY THEIR HOLDERS.
-            selection initiates custody transfer.
+
+          <h1 id="text02" class="text-component instance-2" style="max-width: 420px; line-height: 2 !important; margin: 0 auto 3rem auto !important;">
+            The following identities were relinquished by their holders. Selection initiates custody transfer.
           </h1>
-          <div id="image01" class="image-component instance-1">
-            <span class="frame">
-              <img src="/images/placards/image02.jpg" alt="" />
-            </span>
+
+          <hr class="divider" style="max-width:300px; margin: 0 auto 2.5rem auto; background: #222;" />
+
+          <!-- Identity Card 1 — AVAILABLE -->
+          <div class="nuvo-id-card" style="margin: 0 auto 2rem auto;">
+            <div class="nuvo-id-inner">
+              <div class="nuvo-id-left">
+                <div class="nuvo-id-title">NUVO</div>
+                <div class="nuvo-id-subtitle">IDENTITY CARD</div>
+                <hr class="nuvo-id-hr" />
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> NAME: <span class="nuvo-id-value">—</span></div>
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> ID: <span class="nuvo-id-value">0034</span></div>
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> SYSTEM: <span class="nuvo-id-value">NUVO.01</span></div>
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> STATUS: <span class="nuvo-id-value">IN TRANSFER</span></div>
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> ISSUED: <span class="nuvo-id-value">01 FEB 2026</span></div>
+              </div>
+              <div class="nuvo-id-right">
+                <div class="nuvo-id-qr">
+                  <!-- Dense realistic QR code SVG (21x21 modules) -->
+                  <svg viewBox="0 0 210 210" width="140" height="140" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+                    <rect width="210" height="210" fill="#fff"/>
+                    <!-- Finder Top-Left -->
+                    <rect x="0" y="0" width="70" height="70" fill="#000"/>
+                    <rect x="10" y="10" width="50" height="50" fill="#fff"/>
+                    <rect x="20" y="20" width="30" height="30" fill="#000"/>
+                    <!-- Finder Top-Right -->
+                    <rect x="140" y="0" width="70" height="70" fill="#000"/>
+                    <rect x="150" y="10" width="50" height="50" fill="#fff"/>
+                    <rect x="160" y="20" width="30" height="30" fill="#000"/>
+                    <!-- Finder Bottom-Left -->
+                    <rect x="0" y="140" width="70" height="70" fill="#000"/>
+                    <rect x="10" y="150" width="50" height="50" fill="#fff"/>
+                    <rect x="20" y="160" width="30" height="30" fill="#000"/>
+                    <!-- Timing horizontal -->
+                    <rect x="80" y="60" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="60" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="60" width="10" height="10" fill="#000"/>
+                    <!-- Timing vertical -->
+                    <rect x="60" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="60" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="60" y="120" width="10" height="10" fill="#000"/>
+                    <!-- Alignment pattern (center) -->
+                    <rect x="130" y="130" width="30" height="30" fill="#000"/>
+                    <rect x="140" y="140" width="10" height="10" fill="#fff"/>
+                    <!-- Data modules (dense pattern) -->
+                    <rect x="80" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="130" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="130" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="130" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="140" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="140" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="150" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="150" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="150" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="170" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="170" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="170" width="10" height="10" fill="#000"/>
+                    <rect x="140" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="160" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="180" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="150" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="170" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="140" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="160" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="180" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="150" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="160" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="170" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="140" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="180" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="160" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="180" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="150" y="170" width="10" height="10" fill="#000"/>
+                    <rect x="170" y="170" width="10" height="10" fill="#000"/>
+                    <rect x="140" y="180" width="10" height="10" fill="#000"/>
+                    <rect x="160" y="180" width="10" height="10" fill="#000"/>
+                    <rect x="180" y="180" width="10" height="10" fill="#000"/>
+                  </svg>
+                </div>
+                <div class="nuvo-id-scannable">SCANNABLE</div>
+              </div>
+            </div>
           </div>
-          <ul id="buttons02" class="buttons-component instance-2">
+
+          <ul id="buttons02" class="buttons-component instance-2" style="margin-bottom: 3rem !important;">
             <li>
-              <a id="asume-identity" href="#" class="n01" role="button"
-                >assume identity</a
-              >
+              <a id="asume-identity" href="#" class="n01" role="button" style="color:#ffffff !important;">ASSUME IDENTITY</a>
             </li>
           </ul>
-          <div id="image02" class="image-component instance-2">
-            <span class="frame">
-              <img src="/images/placards/image03.jpg" alt="" />
-            </span>
+
+          <!-- Identity Card 2 — RESERVED -->
+          <div class="nuvo-id-card nuvo-id-card--reserved" style="margin: 0 auto 2rem auto;">
+            <div class="nuvo-id-inner">
+              <div class="nuvo-id-left">
+                <div class="nuvo-id-title">NUVO</div>
+                <div class="nuvo-id-subtitle">IDENTITY CARD</div>
+                <hr class="nuvo-id-hr" />
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> NAME: <span class="nuvo-id-value">—</span></div>
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> ID: <span class="nuvo-id-value">0051</span></div>
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> SYSTEM: <span class="nuvo-id-value">NUVO.01</span></div>
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> STATUS: <span class="nuvo-id-value">IN TRANSFER</span></div>
+                <div class="nuvo-id-field"><span class="nuvo-id-arrow">▶</span> ISSUED: <span class="nuvo-id-value">15 MAR 2026</span></div>
+              </div>
+              <div class="nuvo-id-right">
+                <div class="nuvo-id-qr">
+                  <!-- Dense realistic QR code SVG (21x21 modules) — variant 2 -->
+                  <svg viewBox="0 0 210 210" width="140" height="140" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+                    <rect width="210" height="210" fill="#fff"/>
+                    <!-- Finder Top-Left -->
+                    <rect x="0" y="0" width="70" height="70" fill="#000"/>
+                    <rect x="10" y="10" width="50" height="50" fill="#fff"/>
+                    <rect x="20" y="20" width="30" height="30" fill="#000"/>
+                    <!-- Finder Top-Right -->
+                    <rect x="140" y="0" width="70" height="70" fill="#000"/>
+                    <rect x="150" y="10" width="50" height="50" fill="#fff"/>
+                    <rect x="160" y="20" width="30" height="30" fill="#000"/>
+                    <!-- Finder Bottom-Left -->
+                    <rect x="0" y="140" width="70" height="70" fill="#000"/>
+                    <rect x="10" y="150" width="50" height="50" fill="#fff"/>
+                    <rect x="20" y="160" width="30" height="30" fill="#000"/>
+                    <!-- Timing horizontal -->
+                    <rect x="80" y="60" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="60" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="60" width="10" height="10" fill="#000"/>
+                    <!-- Timing vertical -->
+                    <rect x="60" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="60" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="60" y="120" width="10" height="10" fill="#000"/>
+                    <!-- Alignment pattern -->
+                    <rect x="130" y="130" width="30" height="30" fill="#000"/>
+                    <rect x="140" y="140" width="10" height="10" fill="#fff"/>
+                    <!-- Data modules (different dense pattern) -->
+                    <rect x="80" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="130" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="130" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="130" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="140" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="140" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="150" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="150" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="150" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="150" width="10" height="10" fill="#000"/>
+                    <rect x="80" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="100" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="120" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="90" y="170" width="10" height="10" fill="#000"/>
+                    <rect x="110" y="170" width="10" height="10" fill="#000"/>
+                    <rect x="140" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="150" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="170" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="190" y="80" width="10" height="10" fill="#000"/>
+                    <rect x="140" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="160" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="180" y="90" width="10" height="10" fill="#000"/>
+                    <rect x="150" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="170" y="100" width="10" height="10" fill="#000"/>
+                    <rect x="140" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="160" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="180" y="110" width="10" height="10" fill="#000"/>
+                    <rect x="150" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="190" y="120" width="10" height="10" fill="#000"/>
+                    <rect x="150" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="170" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="190" y="160" width="10" height="10" fill="#000"/>
+                    <rect x="160" y="170" width="10" height="10" fill="#000"/>
+                    <rect x="180" y="170" width="10" height="10" fill="#000"/>
+                    <rect x="150" y="180" width="10" height="10" fill="#000"/>
+                    <rect x="170" y="180" width="10" height="10" fill="#000"/>
+                  </svg>
+                </div>
+                <div class="nuvo-id-scannable">SCANNABLE</div>
+              </div>
+            </div>
           </div>
+
           <ul id="buttons03" class="buttons-component instance-3">
             <li>
-              <a href="#" class="n01" role="button">status: RESERVED</a>
+              <a href="#" class="n01" role="button" style="color:#555555 !important;">STATUS: RESERVED</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
     <script type="module">
-  import { initializeStateMachine } from "./js/init.js";
+  import { initializeStateMachine } from "./js/init.mock.js";
   import { State } from "./js/constants.js";
 
   const stateMachine = await initializeStateMachine();
